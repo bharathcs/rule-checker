@@ -1,0 +1,35 @@
+name: Run CodeCov
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'src/**'
+      - '.github/**'
+  pull_request:
+    branches:
+      - master
+    paths:
+      - 'src/**'
+      - '.github/**'
+  workflow_dispatch:
+
+jobs:
+  runCodeCov:
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Set up repository
+        uses: actions/checkout@v2
+        with:
+          ref: main
+
+      - name: Merge to master
+        run: git checkout --progress --force ${{ github.sha }}
+        
+      - uses: codecov/codecov-action@v2
+        with:
+          file: ${{ github.workspace }}/build/reports/jacoco/coverage/coverage.xml
+          fail_ci_if_error: true
