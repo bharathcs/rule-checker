@@ -1,5 +1,5 @@
 {
-  "version": "0.0.9",
+  "version": "0.1.0",
   "name": "rule-checker",
   "repository": "bharathcs/rule-checker",
   "description": "Create custom rule checkers from boolean logic statements.",
