@@ -1,6 +1,6 @@
 {
   "version": "0.1.0",
-  "name": "rule-checker",
+  "name": "@bharathcs/rule-checker",
   "repository": "bharathcs/rule-checker",
   "description": "Create custom rule checkers from boolean logic statements.",
   "unpkg": "dist/index.min.js",
